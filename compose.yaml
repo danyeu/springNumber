@@ -1,0 +1,23 @@
+#services:
+#  server:
+#    image: danyeu/spring-number:v1
+#    build:
+#      context: .
+#    ports:
+#      - 8082:8082
+#    extra_hosts:
+#      - "host.docker.internal:host-gateway"
+
+services:
+  server:
+    image: danyeu/spring-number:v1
+    build:
+      context: .
+    ports:
+      - 8082:8082
+  random:
+    image: danyeu/spring-random:v1
+    build:
+      context: ../springRandom/.
+    ports:
+      - 8081:8081
